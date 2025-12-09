@@ -378,42 +378,4 @@ We may need to discuss how to verify our software requirements and measure the s
 
 ## Final Project Report
 
-Don't forget to make the GitHub pages public website!
-If you’ve never made a GitHub pages website before, you can follow this webpage (though, substitute your final project repository for the GitHub username one in the quickstart guide):  [https://docs.github.com/en/pages/quickstart](https://docs.github.com/en/pages/quickstart)
-
-| SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. | Using a logic analyzer, we measured how frequently the ATmega was pinging the ESP for its acceleration data. We are currently measuring approximately every 20ms, which is much faster than required. See the screenshot from the logic software above.            |
-| SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             | Using a logic analyzer to measured how long it took the ATmega to finish sending the UART message to the ESP32 after it finished reading the imu data over i2c. This measurement was around 1.75ms, which is much quicker than expected. See that mesurement above. |
-| SRS-03 | ESP32 should be able to send control data through wifi/bleutooth to the computer within 500ms.            |                                                                                                                                                                                                                                                                     |
-| SRS-04 | Python socket receives and uses user input within 200ms.                                                  |                                                                                                                                                                                                                                                                     |
-
-#### 3.2 Hardware Requirements Specification (HRS) Results
-
-*Based on your quantified system performance, comment on how you achieved or fell short of your expected requirements.*
-
-*Did your requirements change? If so, why? Failing to meet a requirement is acceptable; understanding the reason why is critical!*
-
-*Validate at least two requirements, showing how you tested and your proof of work (videos, images, logic analyzer/oscilloscope captures, etc.).*
-
-| ID     | Description                                                                                                                              | Validation Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HRS-01 | The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.        | Both the hand and foot control modules are powered by one 9V battery each. When the full system is running, we measured the current drawn by the 9V battery and found the maximum current to be approximately 131mA. Since the battery has a rating of over 500mAh, the theoretical amount of time the 9V battery will be able to supply a maximum current of 131mA before being fully depleted is 3.82 hours, which is greater than 2 hours and satisfies our requirement. |
-| HRS-02 | The IMU will capture the user’s movements, which will be processed through the ATmega.                                                  | Verified by using the logic analyzer to read the signals passed between the two, as shown above. This can also be seen from the demo -- by moving the imu the controls of the simulation change.                                                                                                                                                                                                                                                                              |
-| HRS-03 | The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| HRS-04 | The final system will require minimal amounts of fine motor skills to operate – the system should be operable by a user with arthritis. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
-### 4. Conclusion
-
-Reflect on your project. Some questions to address:
-
-* What did you learn from it?
-* What went well?
-* What accomplishments are you proud of?
-* What did you learn/gain from this experience?
-* Did you have to change your approach?
-* What could have been done differently?
-* Did you encounter obstacles that you didn’t anticipate?
-* What could be a next step for this project?
-
-## References
-
-Fill in your references here as you work on your final project. Describe any libraries used here.
+See top of page :) 
