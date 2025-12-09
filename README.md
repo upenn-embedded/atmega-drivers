@@ -12,7 +12,7 @@
 | Shawn Lim        | shawnlzh@seas.upenn.edu |
 | Emily Baylock    | ebaylock@seas.upenn.edu |
 
-**GitHub Repository URL: [https://github.com/upenn-embedded/final-project-f25-at-mega-drivers](https://github.com/upenn-embedded/final-project-f25-at-mega-drivers)**
+**GitHub Repository URL: [https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers](https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers)**
 
 **GitHub Pages Website URL:** [https://upenn-embedded.github.io/final-project-website-submission-f25-t26-f25-at-mega-drivers/]()
 
