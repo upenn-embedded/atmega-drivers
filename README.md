@@ -14,7 +14,7 @@
 
 **GitHub Repository URL: [https://github.com/upenn-embedded/final-project-f25-at-mega-drivers](https://github.com/upenn-embedded/final-project-f25-at-mega-drivers)**
 
-**GitHub Pages Website URL:** [for final submission]*
+**GitHub Pages Website URL:** [https://upenn-embedded.github.io/final-project-website-submission-f25-t26-f25-at-mega-drivers/]()
 
 ## Final Project Report
 
@@ -32,8 +32,7 @@ Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxA
 
 ### 3. Results
 
-
-![Final Block Diagram](<images/Final Project/Final_Report_Block.drawio.png>)
+![Final Block Diagram](images/Final Project/Final_Report_Block.drawio.png)
 
 ### 3.1 Software Requirements
 
@@ -43,7 +42,6 @@ Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxA
 | SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             |
 | SRS-03 | ESP32 should be able to send control data through wifi/bluetooth to the computer within 500ms.            |
 | SRS-04 | Python socket receives and uses user input within 200ms.                                                  |
-
 
 SRS-01: The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds.
 
@@ -65,7 +63,6 @@ SRS-04: Python socket receives and uses user input within 200ms.
 
 Unable to be tested due to measuring tools limitation.
 
-
 ### 3.2 Hardware Requirements
 
 | ID     | Description                                                                                                                            |
@@ -74,7 +71,6 @@ Unable to be tested due to measuring tools limitation.
 | HRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                                                          |
 | HRS-03 | The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).        |
 | HRS-04 | The final system will require minimal amounts of fine motor skills to operate - the system should be operable by a user with arthritis |
-
 
 HRS-01: The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.
 
