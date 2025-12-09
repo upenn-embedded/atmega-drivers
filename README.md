@@ -18,14 +18,51 @@
 
 ## Final Project Report
 
+### Project Video 
 Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxAkiVJNU0LkIz9THIGWeNgBH/view](https://drive.google.com/file/d/1IMHc0yKnxAkiVJNU0LkIz9THIGWeNgBH/view)
 
 
+### Images
 <img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>
 <img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>
 <img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>
 
 <img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>
+
+
+### 3. Results
+
+
+![Final Block Diagram](<images/Final Project/Final_Report_Block.png>)
+
+### 3.1 Software Requirements
+| ID     | Description                                                                                               |
+| ------ | --------------------------------------------------------------------------------------------------------- |
+| SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. |
+| SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             |
+| SRS-03 | ESP32 should be able to send control data through wifi/bleutooth to the computer within 500ms.            |
+| SRS-04 | Python socket receives and uses user input within 200ms.                                                  |
+
+
+### 3.2 Hardware Requirements
+TODO
+
+
+### 4. Conclusion
+- What did you learn from it?
+- What went well?
+- What accomplishments are you proud of?
+- What did you learn/gain from this experience?
+- Did you have to change your approach?
+- What could have been done differently?
+- Did you encounter obstacles that you didn’t anticipate?
+- What could be the next step for this project?
+
+
+### 400 by 400 image
+400 by 400 image: 
+
+<img src="images/Final Project/Final_System_400.jpg" alt="Full System Image 400 by 400" width="400" height="400"/>
 
 
 ## Final Project Proposal
