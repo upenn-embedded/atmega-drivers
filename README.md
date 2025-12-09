@@ -32,8 +32,12 @@ Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxA
 
 ### 3. Results
 
+For our final project, we were able to build a racing simulator controller as desired. We build one unit that attaches to the user's arm to mesure rotation (i.e. the steering wheel), and one unit that attaches to the user's leg to measure forward/backward acceleration (i.e. the gas pedal, with the functionality to reverse). We filtered noise from imu data to generate clear signals from which we could convert the user's movement to simulation commands. We were able to send these commands to a Python socket which used them to control the driving simulation, as desired. 
 
-![Final Block Diagram](<images/Final Project/Final_Report_Block.drawio.png>)
+With a bit of extra time, we were able to go beyond this initial goal to also control a fan that would blow air at the user if they were driving fast, to make the simulation more realistic. This unit recieved the speed from the python socket and converted that data into a PWM signal from an ATMega to control the motor. See our final system diagram below. 
+
+<img src="images/Final Project/Final_Report_Block.drawio.png" alt="Final System Block Diagram" width="760"/>
+
 
 ### 3.1 Software Requirements
 | ID     | Description                                                                                               |
@@ -329,35 +333,8 @@ We may need to discuss how to verify our software requirements and measure the s
 Don't forget to make the GitHub pages public website!
 If you’ve never made a GitHub pages website before, you can follow this webpage (though, substitute your final project repository for the GitHub username one in the quickstart guide):  [https://docs.github.com/en/pages/quickstart](https://docs.github.com/en/pages/quickstart)
 
-### 1. Video
 
-[Insert final project video here]
 
-* The video must demonstrate your key functionality.
-* The video must be 5 minutes or less.
-* Ensure your video link is accessible to the teaching team. Unlisted YouTube videos or Google Drive uploads with SEAS account access work well.
-* Points will be removed if the audio quality is poor - say, if you filmed your video in a noisy electrical engineering lab.
-
-### 2. Images
-
-[Insert final project images here]
-
-*Include photos of your device from a few angles. If you have a casework, show both the exterior and interior (where the good EE bits are!).*
-
-### 3. Results
-
-*What were your results? Namely, what was the final solution/design to your problem?*
-
-#### 3.1 Software Requirements Specification (SRS) Results
-
-*Based on your quantified system performance, comment on how you achieved or fell short of your expected requirements.*
-
-*Did your requirements change? If so, why? Failing to meet a requirement is acceptable; understanding the reason why is critical!*
-
-*Validate at least two requirements, showing how you tested and your proof of work (videos, images, logic analyzer/oscilloscope captures, etc.).*
-
-| ID     | Description                                                                                               | Validation Outcome                                                                                                                                                                                                                                                  |
-| ------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. | Using a logic analyzer, we measured how frequently the ATmega was pinging the ESP for its acceleration data. We are currently measuring approximately every 20ms, which is much faster than required. See the screenshot from the logic software above.            |
 | SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             | Using a logic analyzer to measured how long it took the ATmega to finish sending the UART message to the ESP32 after it finished reading the imu data over i2c. This measurement was around 1.75ms, which is much quicker than expected. See that mesurement above. |
 | SRS-03 | ESP32 should be able to send control data through wifi/bleutooth to the computer within 500ms.            |                                                                                                                                                                                                                                                                     |
