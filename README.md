@@ -382,3 +382,9 @@ See top of page :)
 
 ### References
 
+We took advantage of many great Python packages in this project, as follows: 
+* socket -- We use socket to connect to our ESP32's over wifi. 
+* threading -- We use threading to multithread our code! Each ESP has its own Python thread that listens for data. And we have a control thread that acutally executes the simulation controls. 
+* pyautogui -- We use this to press and hold the keys on the keyboard to control the simulation. 
+* time -- We are using time to pulse keys on the kayboard. For example, if the user doesn't want to drive forward full throttle, we choose to pulse the forward key, and use time to keep track of those pulse times. 
+* serial -- We use serial to communicate with the ESP over the computer USB port to control the fan. 
