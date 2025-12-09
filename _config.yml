@@ -1,0 +1,5 @@
+# Disable Jekyll processing to serve raw files
+include:
+  - README.md
+  - "*.md"
+  - images

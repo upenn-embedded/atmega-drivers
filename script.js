@@ -2,16 +2,48 @@
 async function loadReadme() {
     const contentContainer = document.getElementById('readme-content');
     
-    try {
-        // Fetch the README.md file
-        const response = await fetch('README.md');
-        
-        if (!response.ok) {
-            throw new Error('Failed to load README.md');
+    // Try multiple possible paths for the README
+    const possiblePaths = [
+        'README.md',
+        './README.md',
+        '/README.md',
+        window.location.pathname.replace(/\/[^/]*$/, '/') + 'README.md'
+    ];
+    
+    let markdown = null;
+    let fetchError = null;
+    
+    for (const path of possiblePaths) {
+        try {
+            const response = await fetch(path);
+            if (response.ok) {
+                const text = await response.text();
+                // Make sure it's actually markdown, not an HTML error page
+                if (!text.trim().startsWith('<!DOCTYPE') && !text.trim().startsWith('<html')) {
+                    markdown = text;
+                    console.log('Successfully loaded README from:', path);
+                    break;
+                }
+            }
+        } catch (error) {
+            fetchError = error;
+            console.log('Failed to load from:', path);
         }
-        
-        let markdown = await response.text();
-        
+    }
+    
+    if (!markdown) {
+        console.error('Error loading README:', fetchError);
+        contentContainer.innerHTML = `
+            <div class="error-message" style="text-align: center; padding: 3rem;">
+                <h2 style="color: var(--white); margin-bottom: 1rem;">Unable to load README</h2>
+                <p style="margin-bottom: 1rem;">The README.md file could not be loaded.</p>
+                <p><a href="https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers" target="_blank">View project on GitHub</a></p>
+            </div>
+        `;
+        return;
+    }
+    
+    try {
         // Remove the GitHub Classroom badge at the very beginning
         markdown = markdown.replace(/^\[!\[Review Assignment Due Date\].*?\n*/s, '');
         
@@ -36,12 +68,11 @@ async function loadReadme() {
         addAnchorScrolling();
         
     } catch (error) {
-        console.error('Error loading README:', error);
+        console.error('Error parsing README:', error);
         contentContainer.innerHTML = `
-            <div class="error-message">
-                <h2>Unable to load README</h2>
-                <p>Please make sure README.md exists in the repository root.</p>
-                <p><a href="https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers">View on GitHub</a></p>
+            <div class="error-message" style="text-align: center; padding: 3rem;">
+                <h2 style="color: var(--white); margin-bottom: 1rem;">Error parsing README</h2>
+                <p><a href="https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers" target="_blank">View project on GitHub</a></p>
             </div>
         `;
     }
