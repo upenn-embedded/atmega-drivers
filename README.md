@@ -14,7 +14,7 @@
 
 **GitHub Repository URL: [https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers](https://github.com/upenn-embedded/final-project-website-submission-f25-t26-f25-at-mega-drivers)**
 
-**GitHub Pages Website URL:** [https://upenn-embedded.github.io/final-project-website-submission-f25-t26-f25-at-mega-drivers/]()
+**GitHub Pages Website URL:** [https://upenn-embedded.github.io/atmega-drivers/]()
 
 ## Final Project Report
 
@@ -24,20 +24,19 @@ Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxA
 
 ### Images
 
-<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>
-<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>
-<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>
+`<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>`
+`<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>`
+`<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>`
 
-<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>
+`<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>`
 
 ### 3. Results
 
-For our final project, we were able to build a racing simulator controller as desired. We build one unit that attaches to the user's arm to mesure rotation (i.e. the steering wheel), and one unit that attaches to the user's leg to measure forward/backward acceleration (i.e. the gas pedal, with the functionality to reverse). We filtered noise from imu data to generate clear signals from which we could convert the user's movement to simulation commands. We were able to send these commands to a Python socket which used them to control the driving simulation, as desired. 
+For our final project, we were able to build a racing simulator controller as desired. We build one unit that attaches to the user's arm to mesure rotation (i.e. the steering wheel), and one unit that attaches to the user's leg to measure forward/backward acceleration (i.e. the gas pedal, with the functionality to reverse). We filtered noise from imu data to generate clear signals from which we could convert the user's movement to simulation commands. We were able to send these commands to a Python socket which used them to control the driving simulation, as desired.
 
-With a bit of extra time, we were able to go beyond this initial goal to also control a fan that would blow air at the user if they were driving fast, to make the simulation more realistic. This unit recieved the speed from the python socket and converted that data into a PWM signal from an ATMega to control the motor. See our final system diagram below. 
+With a bit of extra time, we were able to go beyond this initial goal to also control a fan that would blow air at the user if they were driving fast, to make the simulation more realistic. This unit recieved the speed from the python socket and converted that data into a PWM signal from an ATMega to control the motor. See our final system diagram below.
 
-<img src="images/Final Project/Final_Report_Block.drawio.png" alt="Final System Block Diagram" width="760"/>
-
+`<img src="images/Final Project/Final_Report_Block.drawio.png" alt="Final System Block Diagram" width="760"/>`
 
 ### 3.1 Software Requirements
 
@@ -379,8 +378,6 @@ We may need to discuss how to verify our software requirements and measure the s
 
 Don't forget to make the GitHub pages public website!
 If you’ve never made a GitHub pages website before, you can follow this webpage (though, substitute your final project repository for the GitHub username one in the quickstart guide):  [https://docs.github.com/en/pages/quickstart](https://docs.github.com/en/pages/quickstart)
-
-
 
 | SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. | Using a logic analyzer, we measured how frequently the ATmega was pinging the ESP for its acceleration data. We are currently measuring approximately every 20ms, which is much faster than required. See the screenshot from the logic software above.            |
 | SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             | Using a logic analyzer to measured how long it took the ATmega to finish sending the UART message to the ESP32 after it finished reading the imu data over i2c. This measurement was around 1.75ms, which is much quicker than expected. See that mesurement above. |
