@@ -18,17 +18,17 @@
 
 ## Final Project Report
 
-### Project Video 
+### Project Video
+
 Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxAkiVJNU0LkIz9THIGWeNgBH/view](https://drive.google.com/file/d/1IMHc0yKnxAkiVJNU0LkIz9THIGWeNgBH/view)
 
-
 ### Images
-<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>
-<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>
-<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>
 
-<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>
+`<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>`
+`<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>`
+`<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>`
 
+`<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>`
 
 ### 3. Results
 
@@ -40,19 +40,64 @@ With a bit of extra time, we were able to go beyond this initial goal to also co
 
 
 ### 3.1 Software Requirements
+
 | ID     | Description                                                                                               |
 | ------ | --------------------------------------------------------------------------------------------------------- |
 | SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. |
 | SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             |
-| SRS-03 | ESP32 should be able to send control data through wifi/bleutooth to the computer within 500ms.            |
+| SRS-03 | ESP32 should be able to send control data through wifi/bluetooth to the computer within 500ms.            |
 | SRS-04 | Python socket receives and uses user input within 200ms.                                                  |
 
 
-### 3.2 Hardware Requirements
-TODO
+SRS-01: The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds.
 
+Verified -- we used the logic analyzer to determine how frequently the ATmega was pinging the ESP for its acceleration data. We are currently measuring approximately every 20ms, which is much faster than required. See the screenshot from the logic software below.
+
+![Verification of SRS-01](./images/MVP_SRS01.png)
+
+SRS-02: ATmega328PB should be able to process IMU data and send info to ESP in 200ms.
+
+Verified -- we used the logic analyzer to determine how long it took the ATmega to finish sending the UART message to the ESP32 after it finished reading the imu data over i2c. This measurement was around 1.75ms, which is much quicker than expected. See that mesurement below.
+
+![Verification of SRS-02](./images/MVP_SRS02.png)
+
+SRS-03: ESP32 should be able to send control data through wifi/bleutooth to the computer within 500ms.
+
+Hard to be tested, but system was responsive to controls immediately after inputs.
+
+SRS-04: Python socket receives and uses user input within 200ms.
+
+Unable to be tested due to measuring tools limitation.
+
+
+### 3.2 Hardware Requirements
+
+| ID     | Description                                                                                                                            |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| HRS-01 | The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.      |
+| HRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                                                          |
+| HRS-03 | The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).        |
+| HRS-04 | The final system will require minimal amounts of fine motor skills to operate - the system should be operable by a user with arthritis |
+
+
+HRS-01: The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.
+
+The battery of the 9v depletes at 110ma as measured by the multimeter. Since a 9v battery has 400mAh, it will last a little over 3 hours.
+
+HRS-02: The IMU will capture the user’s movements, which will be processed through the ATmega.
+
+Verified by using the logic analyzer to read the signals passed between the two, as shown above. This can also be seen from the demo -- by moving the imu the controls of the simulation change.
+
+HRS-03: The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).
+
+Verified. This is shown in the pictures and the demo video. Full system was completely separate from the software running on the computer.
+
+HRS-04: The final system will require minimal amounts of fine motor skills to operate – the system should be operable by a user with arthritis.
+
+Verified as shown in the demo video. You do not need to be able to grip anything or use your fingers. Everything is controlled by large natural movements such as the twisting of your arm or the extension of your legs.
 
 ### 4. Conclusion
+
 - What did you learn from it?
 - What went well?
 - What accomplishments are you proud of?
@@ -62,12 +107,11 @@ TODO
 - Did you encounter obstacles that you didn’t anticipate?
 - What could be the next step for this project?
 
-
 ### 400 by 400 image
-400 by 400 image: 
 
-<img src="images/Final Project/Final_System_400.jpg" alt="Full System Image 400 by 400" width="400" height="400"/>
+400 by 400 image:
 
+`<img src="images/Final Project/Final_System_400.jpg" alt="Full System Image 400 by 400" width="400" height="400"/>`
 
 ## Final Project Proposal
 
@@ -348,12 +392,12 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 *Validate at least two requirements, showing how you tested and your proof of work (videos, images, logic analyzer/oscilloscope captures, etc.).*
 
-| ID     | Description                                                                                                                              | Validation Outcome                                                                                                                                                                                                                                          |
-| ------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HRS-01 | The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.        | Both the hand and foot control modules are powered by one 9V battery each. When the full system is running, we measured the current drawn by the 9V battery and found the maximum current to be approximately 131mA. Since the battery has a rating of over 500mAh, the theoretical amount of time the 9V battery will be able to supply a maximum current of 131mA before being fully depleted is 3.82 hours, which is greater than 2 hours and satisfies our requirement.|
-| HRS-02 | The IMU will capture the user’s movements, which will be processed through the ATmega.                                                  | Verified by using the logic analyzer to read the signals passed between the two, as shown above. This can also be seen from the demo -- by moving the imu the controls of the simulation change.                                                            |
-| HRS-03 | The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).           |                                                                                                                                                                                                                                                             |
-| HRS-04 | The final system will require minimal amounts of fine motor skills to operate – the system should be operable by a user with arthritis. |                                                                                                                                                                                                                                                             |
+| ID     | Description                                                                                                                              | Validation Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| HRS-01 | The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.        | Both the hand and foot control modules are powered by one 9V battery each. When the full system is running, we measured the current drawn by the 9V battery and found the maximum current to be approximately 131mA. Since the battery has a rating of over 500mAh, the theoretical amount of time the 9V battery will be able to supply a maximum current of 131mA before being fully depleted is 3.82 hours, which is greater than 2 hours and satisfies our requirement. |
+| HRS-02 | The IMU will capture the user’s movements, which will be processed through the ATmega.                                                  | Verified by using the logic analyzer to read the signals passed between the two, as shown above. This can also be seen from the demo -- by moving the imu the controls of the simulation change.                                                                                                                                                                                                                                                                              |
+| HRS-03 | The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| HRS-04 | The final system will require minimal amounts of fine motor skills to operate – the system should be operable by a user with arthritis. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ### 4. Conclusion
 
