@@ -24,12 +24,11 @@ Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxA
 
 ### Images
 
-<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>
-<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>
-<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>
+`<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>`
+`<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>`
+`<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>`
 
-<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>
-
+`<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>`
 
 ### 3. Results
 
@@ -37,7 +36,7 @@ For our final project, we were able to build a racing simulator controller as de
 
 With a bit of extra time, we were able to go beyond this initial goal to also control a fan that would blow air at the user if they were driving fast, to make the simulation more realistic. This unit recieved the speed from the python socket and converted that data into a PWM signal from an ATMega to control the motor. See our final system diagram below.
 
-<img src="images/Final Project/Final_Report_Block.drawio.png" alt="Final System Block Diagram" width="760"/>
+`<img src="images/Final Project/Final_Report_Block.drawio.png" alt="Final System Block Diagram" width="760"/>`
 
 ### 3.1 Software Requirements
 
@@ -95,30 +94,28 @@ Verified -- This is shown in the demo video. You do not need to be able to grip 
 
 ### 4. Conclusion
 
-- What did you learn from it?
-- What went well?
-- What accomplishments are you proud of?
-- What did you learn/gain from this experience?
-- Did you have to change your approach?
-- What could have been done differently?
-- Did you encounter obstacles that you didn’t anticipate?
-
-There were of course a lot of small bugs along the way that we had to sort out. But maybe our biggest challenge was figuring out how to mount all of our electronics on a controller that could be worn on the wrist. We didn't want it to be too heavy, but we did want it to be secure. And once we had designed the 3D printed part, we used a combination of threaded heat inserts to screw down the boards, velcro to attach the batteries, and tape to attach smaller components to the 3D printed part. 
-
-In software, our biggest obstacle became writing our own i2c driver for the ATmega to get data from the imu, though this was expected to be challenging 
-
-- What could be the next step for this project?
-
-There are many different ways we could keep going with this project! One way would be to add more physical outputs, for example, a light that flashes when you drive off the road, or a speaker that plays different sounds depending on the terrain the user is driving over. 
-
-Another route would be to make the system more accessible. As desired, one doesn't need fine motor skills to operate the controllers; however, it may be difficult for someone without fine motor skills to strap on the controllers, or open the simulation on their laptop. Thus, coming up with a more accessible way to attach the device to the user, or a standalone device to run the simulation, could be more accessible. 
-
+- **What did you learn from it?**
+  Through the completion of this project we learned how to take an idea for an embedded device and turn it into a fully functional device through rigorous design and prototyping. We also learned important things to consider when building a prototype under a short timeline, such as setting milestones to ensure that we are on pace to complete the project and ordering spare parts ahead of time.
+- **What went well?**
+  Throughout the duration of the project, our team was able to come to a consensus on design ideas and implementation techniques efficiently, which allowed us to get a head start on the project. This proved to be crucial as the long lead times of ordering parts would have set our progress back significantly if we had not put in our orders far enough in advance. This gave us ample time to finish our prototype and test it thoroughly before demo day.
+- **What accomplishments are you proud of?**
+  Whenever we came across hurdles during the design phase and specifically encountering issues while building of the device, our team was able to work together to troubleshoot the problems and resolve them quickly. Given the short timeline to complete this project, we are very satisfied with the effectiveness of our final product given the complexity of the system.
+- **What did you learn/gain from this experience?**
+  This experience has showed us the difficulties of combining the different hardware and software components of an embedded device in order to implement it into a fully functional prototype. However, working through these difficulties under a tight schedule has prepared us for working through similar challenging situations when developing embedded devices in real world industries.
+- **Did you have to change your approach?**
+  The vision of our device changed slightly through our design iterations, but stayed mostly consistent as we had a clear idea of what our goals for it was from the beginning. Due to how the IMU sensors worked, we ended up having to separate the steering controller on the arm with the acceleration controller on the leg to make the device more intuitive to use.
+- **What could have been done differently?**
+  One component of our device that could have been improved was the hardware connections we used. Due to the tight schedule, we decided to use jumper wires for all of our power and data connections with only a few connections that were permanently soldered. This proved to be an issue as the connections would loosen and disconnect while using the device, especially since the operation of the controllers required significant physical movement. Having permanent connections between the components would further add to the robustness of our device and lead to less unexpected issues.
+- **Did you encounter obstacles that you didn’t anticipate?**
+  There were of course a lot of small bugs along the way that we had to sort out. But maybe our biggest challenge was figuring out how to mount all of our electronics on a controller that could be worn on the wrist. We didn't want it to be too heavy, but we did want it to be secure. And once we had designed the 3D printed part, we used a combination of threaded heat inserts to screw down the boards, velcro to attach the batteries, and tape to attach smaller components to the 3D printed part. In software, our biggest obstacle became writing our own i2c driver for the ATmega to get data from the imu, though this was expected to be challenging.
+- **What could be the next step for this project?**
+  There are many different ways we could keep going with this project! One way would be to add more physical outputs, for example, a light that flashes when you drive off the road, or a speaker that plays different sounds depending on the terrain the user is driving over. Another route would be to make the system more accessible. As desired, one doesn't need fine motor skills to operate the controllers; however, it may be difficult for someone without fine motor skills to strap on the controllers, or open the simulation on their laptop. Thus, coming up with a more accessible way to attach the device to the user, or a standalone device to run the simulation, could be more accessible.
 
 ### 400 by 400 image
 
 400 by 400 image:
 
-<img src="images/Final Project/Final_System_400.jpg" alt="Full System Image 400 by 400" width="400" height="400"/>
+`<img src="images/Final Project/Final_System_400.jpg" alt="Full System Image 400 by 400" width="400" height="400"/>`
 
 ## Final Project Proposal
 
@@ -381,42 +378,7 @@ We may need to discuss how to verify our software requirements and measure the s
 
 ## Final Project Report
 
-Don't forget to make the GitHub pages public website!
-If you’ve never made a GitHub pages website before, you can follow this webpage (though, substitute your final project repository for the GitHub username one in the quickstart guide):  [https://docs.github.com/en/pages/quickstart](https://docs.github.com/en/pages/quickstart)
+See top of page :) 
 
-| SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. | Using a logic analyzer, we measured how frequently the ATmega was pinging the ESP for its acceleration data. We are currently measuring approximately every 20ms, which is much faster than required. See the screenshot from the logic software above.            |
-| SRS-02 | ATmega328PB should be able to process IMU data and send info to ESP in 200ms.                             | Using a logic analyzer to measured how long it took the ATmega to finish sending the UART message to the ESP32 after it finished reading the imu data over i2c. This measurement was around 1.75ms, which is much quicker than expected. See that mesurement above. |
-| SRS-03 | ESP32 should be able to send control data through wifi/bleutooth to the computer within 500ms.            |                                                                                                                                                                                                                                                                     |
-| SRS-04 | Python socket receives and uses user input within 200ms.                                                  |                                                                                                                                                                                                                                                                     |
+### References
 
-#### 3.2 Hardware Requirements Specification (HRS) Results
-
-*Based on your quantified system performance, comment on how you achieved or fell short of your expected requirements.*
-
-*Did your requirements change? If so, why? Failing to meet a requirement is acceptable; understanding the reason why is critical!*
-
-*Validate at least two requirements, showing how you tested and your proof of work (videos, images, logic analyzer/oscilloscope captures, etc.).*
-
-| ID     | Description                                                                                                                              | Validation Outcome                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HRS-01 | The ATmega328PB and ESP32 will be powered with a 9V battery and should last approximately 2 hours before the battery is depleted.        | Both the hand and foot control modules are powered by one 9V battery each. When the full system is running, we measured the current drawn by the 9V battery and found the maximum current to be approximately 131mA. Since the battery has a rating of over 500mAh, the theoretical amount of time the 9V battery will be able to supply a maximum current of 131mA before being fully depleted is 3.82 hours, which is greater than 2 hours and satisfies our requirement. |
-| HRS-02 | The IMU will capture the user’s movements, which will be processed through the ATmega.                                                  | Verified by using the logic analyzer to read the signals passed between the two, as shown above. This can also be seen from the demo -- by moving the imu the controls of the simulation change.                                                                                                                                                                                                                                                                              |
-| HRS-03 | The driving controller system and the computer/simulation system will be physically separate (i.e. no cables connecting them).           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| HRS-04 | The final system will require minimal amounts of fine motor skills to operate – the system should be operable by a user with arthritis. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
-### 4. Conclusion
-
-Reflect on your project. Some questions to address:
-
-* What did you learn from it?
-* What went well?
-* What accomplishments are you proud of?
-* What did you learn/gain from this experience?
-* Did you have to change your approach?
-* What could have been done differently?
-* Did you encounter obstacles that you didn’t anticipate?
-* What could be a next step for this project?
-
-## References
-
-Fill in your references here as you work on your final project. Describe any libraries used here.
