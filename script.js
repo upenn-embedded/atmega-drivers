@@ -162,4 +162,4 @@ document.addEventListener('DOMContentLoaded', loadReadme);
 
 // ===== Console Easter Egg =====
 console.log('%c(AT)Mega Drivers', 'font-size: 20px; font-weight: bold; color: #6366f1;');
-console.log('%cAccessible Racing Controller - UPenn ESE 3500', 'font-size: 12px; color: #6b7280;');
+console.log('%cAccessible Racing Controller - UPenn ESE 5190', 'font-size: 12px; color: #6b7280;');
