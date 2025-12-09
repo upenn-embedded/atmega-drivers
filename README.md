@@ -104,6 +104,12 @@ Verified -- This is shown in the demo video. You do not need to be able to grip 
 - Did you encounter obstacles that you didn’t anticipate?
 - What could be the next step for this project?
 
+There are many different ways we could keep going with this project! One way would be to add more physical outputs, for example, a light that flashes when you drive off the road, or a speaker that plays different sounds depending on the terrain the user is driving over. 
+
+Another route would be to make the system more accessible. As desired, one doesn't need fine motor skills to operate the controllers; however, it may be difficult for someone without fine motor skills to strap on the controllers, or open the simulation on their laptop. Thus, coming up with a more accessible way to attach the device to the user, or a standalone device to run the simulation, could be more accessible. 
+
+Finally, we could also consider hiding the electronics on the controllers, as they could get caught on something and potentially be tugged out in the current design. 
+
 ### 400 by 400 image
 
 400 by 400 image:
