@@ -33,7 +33,7 @@ Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxA
 ### 3. Results
 
 
-![Final Block Diagram](<images/Final Project/Final_Report_Block.png>)
+![Final Block Diagram](<images/Final Project/Final_Report_Block.drawio.png>)
 
 ### 3.1 Software Requirements
 | ID     | Description                                                                                               |
