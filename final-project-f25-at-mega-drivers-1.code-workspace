@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../../PlatformIO/Projects/Final Project 5190"
+	}
+],
+  "settings": {
+    "files.associations": {
+      "print": "cpp"
+    }
+  }
+}
