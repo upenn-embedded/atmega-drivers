@@ -16,6 +16,18 @@
 
 **GitHub Pages Website URL:** [for final submission]*
 
+## Final Project Report
+
+Watch our final project video here: [https://drive.google.com/file/d/1IMHc0yKnxAkiVJNU0LkIz9THIGWeNgBH/view](https://drive.google.com/file/d/1IMHc0yKnxAkiVJNU0LkIz9THIGWeNgBH/view)
+
+
+<img src="images/Final Project/Leg_Driver.jpg" alt="Leg Driver Image" width="250"/>
+<img src="images/Final Project/Arm_Driver.jpg" alt="Arm Driver Image" width="250"/>
+<img src="images/Final Project/Fan_System.jpg" alt="Fan System Image" width="250"/>
+
+<img src="images/Final Project/Full_System.jpg" alt="Full System Image" width="760"/>
+
+
 ## Final Project Proposal
 
 ### 1. Abstract
